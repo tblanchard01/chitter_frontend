@@ -25,10 +25,21 @@ class App extends Component {
     return (
 
       <div className="App">
+      <div className ="loginbox">
+      <form action = "/login" method = "post">
+      <textarea name = "login_input" class ="login_input" >
+      </textarea>
+      <textarea name = "password" class ="login_input" >
+      </textarea>
+       <input type = "submit" value = "login"></input>
+         </form>     
+       </div>
+
+       <br/><br/><br></br>
       <h1> Welcome to Chitter V2.0 </h1>
        
        <div className = "leftbox">
-         <h1> Welcome User </h1>
+         <h2> Welcome User </h2>
         <form action = "/user_peep" method = "post">
       <textarea name = "user_peep" class ="peepinput" >
 
