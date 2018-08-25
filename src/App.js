@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import Peep from './components/peep';
 
 class App extends Component {
   constructor(props){
@@ -8,6 +8,17 @@ class App extends Component {
     this.state = {
       peeps: []
     }
+  }
+
+  componentDidMount(){
+    const url = 'https://chitter-backend-api.herokuapp.com/peeps.json'
+    fetch(url)
+    .then(response => response.json())
+    .then((data) =>{
+      this.setState({
+        peeps:data
+      })
+    })
   }
 
   render() {
@@ -21,7 +32,9 @@ class App extends Component {
      </div>  
 
      <div className = "rightbox">
-       rightbox 
+       {this.state.peeps.map((peep) => {
+         return <Peep peep = {peep} ></Peep>
+       })}
      </div>
 
       </div>
