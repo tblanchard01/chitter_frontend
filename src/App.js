@@ -28,7 +28,13 @@ class App extends Component {
       <h1> Welcome to Chitter V2.0 </h1>
        
        <div className = "leftbox">
-       leftbox    
+         <h1> Welcome User </h1>
+        <form action = "/user_peep" method = "post">
+      <textarea name = "user_peep" class ="peepinput" >
+
+       </textarea>
+       <input type = "submit" value = "Peep"></input>
+         </form>     
      </div>  
 
      <div className = "rightbox">

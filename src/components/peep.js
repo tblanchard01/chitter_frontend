@@ -2,7 +2,7 @@ import React from "react";
 import "./peep.css"
 class Peep extends React.Component{
     render(){
-        const handle = this.props.peep.handle 
+        const handle = this.props.peep.user.handle 
         const msg = this.props.peep.body 
 
 
@@ -10,13 +10,11 @@ class Peep extends React.Component{
             <div className = "peep_container"> 
             {/* add more in here to match rest of json attributes */}
             <div className = "peep_handle">
-            handle should be here 
-            {handle}
+            @{handle}:
 
             </div>
             <div className ="peep_msg">
             {msg}
-
             </div>
             
             
