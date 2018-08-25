@@ -10,6 +10,7 @@ class Peep extends React.Component{
             <div className = "peep_container"> 
             {/* add more in here to match rest of json attributes */}
             <div className = "peep_handle">
+            handle should be here 
             {handle}
 
             </div>
