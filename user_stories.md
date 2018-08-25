@@ -1,7 +1,7 @@
 Creating Users
 Logging in
-Posting Peeps
-Viewing all Peeps (I suggest you start here)
+Posting Peeps - this next 
+Viewing all Peeps (I suggest you start here) - done
 Viewing individual Peeps
 Deleting Peeps
 Liking Peeps

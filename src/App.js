@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Peep from './components/peep';
+import fetch from 'node-fetch';
+
 
 class App extends Component {
   constructor(props){
@@ -38,7 +40,6 @@ class App extends Component {
          </form>     
        </div>
 
-       <br/><br/><br></br>
       <h1> Welcome to Chitter V2.0 </h1>
        
        <div className = "leftbox">
@@ -63,3 +64,8 @@ class App extends Component {
 }
 
 export default App;
+
+// curl "https://chitter-backend-api.herokuapp.com/users" \
+//   -X POST \
+//   -H "Content-Type: application/json" \
+//   -d '{"user": {"handle":"kay", "password":"mypassword"}}'
