@@ -8,17 +8,18 @@ h1{
    
    label{ 
        font-family: 'Open Sans';
-       font-size: 18px;
-       color: darkblue; 
-       padding: 2%; 
-   
+       font-size: 12px;
+       display: inline-block;
+       text-align: center;
+       padding-left: 10px;
+         
       }
       
       .loginbox{ 
         background-color:rgba(0, 0, 0, 0.4); 
         width: 80vw;
         height: 70px; 
-        margin-left:11%;
+        margin-left:16%;
         margin-top: 1%;
         border-radius: 5px;
         
@@ -27,9 +28,12 @@ h1{
 
     .login_input{
       width: 20%;
-      height: 2px;
+      margin-top: 20px;
+      margin-right: 5px;
+      margin-left: 5px; 
+      height: 30px;
       box-sizing: border-box;  
-      padding: 2%;
+    
      }
 
     

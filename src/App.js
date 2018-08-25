@@ -27,9 +27,12 @@ class App extends Component {
       <div className="App">
       <div className ="loginbox">
       <form action = "/login" method = "post">
+      <label for="login_input"> login</label>
       <textarea name = "login_input" class ="login_input" >
       </textarea>
-      <textarea name = "password" class ="login_input" >
+      <label for="password_input"> password </label>
+
+      <textarea name = "password_input" class ="login_input" >
       </textarea>
        <input type = "submit" value = "login"></input>
          </form>     
