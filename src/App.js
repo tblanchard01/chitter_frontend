@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Peep from './components/peep';
 import Login from './components/login'
+import Post_Peep from './components/post_peep'
 import fetch from 'node-fetch';
 
 
@@ -30,20 +31,11 @@ class App extends Component {
 
       <div className="App">
       <Login></Login>
+      <Post_Peep></Post_Peep>
 
       <h1> Welcome to Chitter V2.0 </h1>
        
-       <div className = "leftbox">
-         <h2> Welcome User </h2>
-        <form action = "/user_peep" method = "post">
-      <textarea name = "user_peep" class ="peepinput" >
-
-       </textarea>
-       <input type = "submit" value = "Peep"></input>
-         </form>     
-     </div>  
-
-     <div className = "rightbox">
+       <div className = "view_peep_box">
        {this.state.peeps.map((peep) => {
          return <Peep peep = {peep} ></Peep>
        })}

@@ -39,18 +39,18 @@ h1{
     
 
 
-   .leftbox{ 
+   .post_peep_box{ 
        background-color:rgba(0, 0, 0, 0.4); 
        width: 20%;
        height: 125px; 
        margin-left: 4%; 
-       margin-top: 0.5%;
+       margin-top: 6%;
        border-radius: 5px;
        padding: 2%;
        padding-top: 1%;
        float: left;
    }
-   .rightbox{ 
+   .view_peep_box{ 
     background-color:rgba(230, 182, 25, 0.4); 
     width: 60%;
     height: 600px;
