@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import Peep from './components/peep';
+import Login from './components/login'
 import fetch from 'node-fetch';
+
 
 
 class App extends Component {
@@ -27,18 +29,7 @@ class App extends Component {
     return (
 
       <div className="App">
-      <div className ="loginbox">
-      <form action = "/login" method = "post">
-      <label for="login_input"> login</label>
-      <textarea name = "login_input" class ="login_input" >
-      </textarea>
-      <label for="password_input"> password </label>
-
-      <textarea name = "password_input" class ="login_input" >
-      </textarea>
-       <input type = "submit" value = "login"></input>
-         </form>     
-       </div>
+      <Login></Login>
 
       <h1> Welcome to Chitter V2.0 </h1>
        
