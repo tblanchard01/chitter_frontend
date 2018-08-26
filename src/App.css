@@ -50,7 +50,7 @@ h1{
        padding-top: 1%;
        float: left;
    }
-   .view_peep_box{ 
+   .peep_viewer{ 
     background-color:rgba(230, 182, 25, 0.4); 
     width: 60%;
     height: 600px;

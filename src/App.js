@@ -35,7 +35,7 @@ class App extends Component {
 
       <h1> Welcome to Chitter V2.0 </h1>
        
-       <div className = "view_peep_box">
+       <div className = "peep_viewer">
        {this.state.peeps.map((peep) => {
          return <Peep peep = {peep} ></Peep>
        })}
