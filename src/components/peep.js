@@ -1,30 +1,21 @@
-import React from "react"; 
-import "./peep.css"
-class Peep extends React.Component{
-    render(){
-        const handle = this.props.peep.user.handle 
-        const msg = this.props.peep.body 
+import React from "react";
+import "./peep.css";
+class Peep extends React.Component {
+  render() {
+    const { peep } = this.props; //object destructering { peep:{}, login:"" }
+    const handle = peep.user.handle;
+    const msg = peep.body;
 
-
-        return(
-            <div className = "peep_container"> 
-            {/* add more in here to match rest of json attributes */}
-            <div className = "peep_handle">
-            @{handle}:
-
-            </div>
-            <div className ="peep_msg">
-            {msg}
-            </div>
-            
-            
-         </div>
-        )
-
-    }
+    return (
+      <div className="peep_container">
+        {/* add more in here to match rest of json attributes */}
+        <div className="peep_handle">@{handle}:</div>
+        <div className="peep_msg">{msg}</div>
+      </div>
+    );
+  }
 }
 
 // https://chitter-backend-api.herokuapp.com/peeps.json
 
-
-export default Peep; 
+export default Peep;
