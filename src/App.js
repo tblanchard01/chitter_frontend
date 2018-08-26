@@ -5,8 +5,6 @@ import Login from './components/login'
 import Post_Peep from './components/post_peep'
 import fetch from 'node-fetch';
 
-
-
 class App extends Component {
   constructor(props){
     super(props)

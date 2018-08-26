@@ -6,3 +6,6 @@ Viewing individual Peeps
 Deleting Peeps
 Liking Peeps
 Unliking Peeps
+
+
+need to implement that logging in creates new user. 
