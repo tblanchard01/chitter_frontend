@@ -13,7 +13,7 @@ class Login extends React.Component {
             },
             body: JSON.stringify({
                 user: {
-                    handle: "timsadasdas",
+                    handle: this.state.handle,
                     password: "blah blah"
                 }
             })
@@ -29,6 +29,9 @@ class Login extends React.Component {
             );
     }
 
+    handleLogin(login) {
+        this.setState({ handle: login })
+    }
     render() {
         if (this.state.username) {
             return <div className="loginbox">
@@ -41,10 +44,13 @@ class Login extends React.Component {
                 <div className="loginbox">
                     <form onSubmit={e => this.submitLogin(e)}>
                         <label> login</label>
-                        <input name="login_input" className="login_input" />
+                        <input name="login_input" className="login_input"
+                            onChange={e => this.handleLogin(e.target.value)} />
+
                         <label> password </label>
 
-                        <input name="password_input" className="login_input" />
+                        <input name="password_input" className="login_input"
+                            onChange={e => this.setState({ password: e.target.value })} />
                         <input type="submit" value="login" />
                     </form>
                 </div>
