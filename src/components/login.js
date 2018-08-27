@@ -22,7 +22,7 @@ class Login extends React.Component {
             .then(json => {
                 //"has already been taken"
                 console.log(json);
-                if (!json.handle == "has already been taken") {
+                if (json.handle !== "has already been taken") {
                     this.setState({
                         username: json.handle,
                         id: json.id
