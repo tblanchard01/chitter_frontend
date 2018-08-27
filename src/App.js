@@ -9,11 +9,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      peeps: []
+      peeps: [],
+      searchTerm: ""
     };
-    
   }
-  
 
   componentDidMount() {
     const url = "https://chitter-backend-api.herokuapp.com/peeps.json";
@@ -26,17 +25,12 @@ class App extends Component {
       });
   }
 
-apples (){
-  console.log(this.state.peeps)
-  var updatedList = this.state.peeps;
-updatedList = updatedList.filter(function(item){
-  return item.toLowerCase().search("peep".toLowerCase()) !== -1;
-});
-this.setState({peeps: updatedList});
+  handleSearchTerm(search) {
+    this.setState({ searchTerm: search });
+  }
 
-}
-  
   render() {
+
     return (
       <div className="App">
         <Login />
@@ -45,14 +39,13 @@ this.setState({peeps: updatedList});
         <h1> Welcome to Chitter V2.0 </h1>
 
         <div className="peep_viewer">
-        <span>search:</span>
-        <input />
-        
-          {this.state.peeps.map(peep => {
+          <span>search:</span>
+          <input onChange={e => this.handleSearchTerm(e.target.value)} />
+
+          {this.state.peeps.filter(x => x.body.toLowerCase().includes(this.state.searchTerm)).map(peep => {
             return <Peep peep={peep} />;
           })}
 
-          
         </div>
       </div>
     );
