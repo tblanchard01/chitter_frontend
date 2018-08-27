@@ -11,7 +11,9 @@ class App extends Component {
     this.state = {
       peeps: []
     };
+    
   }
+  
 
   componentDidMount() {
     const url = "https://chitter-backend-api.herokuapp.com/peeps.json";
@@ -24,6 +26,16 @@ class App extends Component {
       });
   }
 
+apples (){
+  console.log(this.state.peeps)
+  var updatedList = this.state.peeps;
+updatedList = updatedList.filter(function(item){
+  return item.toLowerCase().search("peep".toLowerCase()) !== -1;
+});
+this.setState({peeps: updatedList});
+
+}
+  
   render() {
     return (
       <div className="App">
@@ -35,9 +47,12 @@ class App extends Component {
         <div className="peep_viewer">
         <span>search:</span>
         <input />
+        
           {this.state.peeps.map(peep => {
             return <Peep peep={peep} />;
           })}
+
+          
         </div>
       </div>
     );
