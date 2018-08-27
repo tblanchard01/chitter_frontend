@@ -34,8 +34,38 @@ class Login extends React.Component {
 
                 }
             }
+       );
+       this.createSession(e)
+    }
+    createSession(e) {
+        e.preventDefault();
+        fetch("https://chitter-backend-api.herokuapp.com/sessions", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                session: {
+                    handle: this.state.handle,
+                    password: "blah blah"
+                }
+            })
+        })
+            .then(res => res.json())
+            .then(json => {
+                console.log(json);
+                      this.setState({
+                        session_key: json.session_key,
+                    
+                    });
+                    console.log("session key added")
+                    console.log(this.state.session_key)
+                
+            }
             );
     }
+
+
 
     handleLogin(login) {
         this.setState({ handle: login })
