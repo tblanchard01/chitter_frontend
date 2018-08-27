@@ -24,7 +24,9 @@ class Login extends React.Component {
                 this.setState({
                     username: json.handle,
                     id: json.id
-                })
+                });
+                const loginCallback = this.props.onLogin;
+                loginCallback(json.handle);
             }
             );
     }
@@ -35,7 +37,7 @@ class Login extends React.Component {
     render() {
         if (this.state.username) {
             return <div className="loginbox">
-                "welcome: " {this.state.username}
+                welcome:  {this.state.username}
             </div>
 
         } else {

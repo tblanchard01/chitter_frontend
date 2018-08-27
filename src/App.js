@@ -29,12 +29,17 @@ class App extends Component {
     this.setState({ searchTerm: search });
   }
 
+  handleLogin(username) {
+    console.log('App now has the username!', username);
+    this.setState({ username: username });
+  }
+
   render() {
 
     return (
       <div className="App">
-        <Login />
-        <PostPeep />
+        <Login onLogin={x => this.handleLogin(x)} />
+        <PostPeep username={this.state.username} />
 
         <h1> Welcome to Chitter V2.0 </h1>
 
