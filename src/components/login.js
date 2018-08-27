@@ -29,16 +29,17 @@ class Login extends React.Component {
                     });
                     const loginCallback = this.props.onLogin;
                     loginCallback(json.handle);
+                    this.createSession()
+
                 } else {
                     this.setState({ error_flag: true })
 
                 }
             }
        );
-       this.createSession(e)
     }
-    createSession(e) {
-        e.preventDefault();
+    createSession() {
+        preventDefault();
         fetch("https://chitter-backend-api.herokuapp.com/sessions", {
             method: "POST",
             headers: {
@@ -63,7 +64,8 @@ class Login extends React.Component {
                 
             }
             );
-    }
+
+        }
 
 
 
