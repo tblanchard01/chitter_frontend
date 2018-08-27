@@ -20,13 +20,19 @@ class Login extends React.Component {
         })
             .then(res => res.json())
             .then(json => {
+                //"has already been taken"
                 console.log(json);
-                this.setState({
-                    username: json.handle,
-                    id: json.id
-                });
-                const loginCallback = this.props.onLogin;
-                loginCallback(json.handle);
+                if (!json.handle == "has already been taken") {
+                    this.setState({
+                        username: json.handle,
+                        id: json.id
+                    });
+                    const loginCallback = this.props.onLogin;
+                    loginCallback(json.handle);
+                } else {
+                    this.setState({ error_flag: true })
+
+                }
             }
             );
     }
@@ -55,6 +61,7 @@ class Login extends React.Component {
                             onChange={e => this.setState({ password: e.target.value })} />
                         <input type="submit" value="login" />
                     </form>
+                    {this.state.error_flag ? <span>Username already taken!</span> : null}
                 </div>
             );
         }
