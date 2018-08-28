@@ -39,7 +39,6 @@ class Login extends React.Component {
        );
     }
     createSession() {
-        preventDefault();
         fetch("https://chitter-backend-api.herokuapp.com/sessions", {
             method: "POST",
             headers: {
