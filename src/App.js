@@ -30,12 +30,11 @@ class App extends Component {
   }
 
   handleLogin(username) {
-    console.log('App now has the username!', username);
+    console.log("App now has the username!", username);
     this.setState({ username: username });
   }
 
   render() {
-
     return (
       <div className="App">
         <Login onLogin={x => this.handleLogin(x)} />
@@ -48,9 +47,9 @@ class App extends Component {
           <input onChange={e => this.handleSearchTerm(e.target.value)} />
 
           {this.state.peeps.filter(x => x.body.toLowerCase().includes(this.state.searchTerm)).map(peep => {
-            return <Peep peep={peep} />;
+            console.log(<Peep peep={peep} key={this.state.peeps.indexOf(peep)} />);
+            return <Peep peep={peep} key={this.state.peeps.indexOf(peep)} />;
           })}
-
         </div>
       </div>
     );

@@ -14,26 +14,25 @@ class Login extends React.Component {
       body: JSON.stringify({
         user: {
           handle: this.state.handle,
-          password: "blah blah"
+          password: "a string"
         }
       })
     })
       .then(res => res.json())
       .then(json => {
-        //"has already been taken"
         if (json.handle[0] !== "has already been taken") {
           this.setState({
             username: json.handle,
             id: json.id
           });
           console.log("if statement thinks username not taken");
-          console.log(this.state)
+          console.log(this.state);
           const loginCallback = this.props.onLogin;
-          loginCallback(json.handle)
+          loginCallback(json.handle);
           this.createSession();
         } else {
           this.setState({ error_flag: true });
-          console.log('error path followed correctly')
+          console.log("error path followed correctly");
         }
       });
   }
@@ -56,8 +55,7 @@ class Login extends React.Component {
         this.setState({
           session_key: json.session_key
         });
-        console.log("session key added");
-        console.log(this.state.session_key);
+        console.log("session key added:" + this.state.session_key);
       });
   }
 
