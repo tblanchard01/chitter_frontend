@@ -21,13 +21,13 @@ class Login extends React.Component {
       .then(res => res.json())
       .then(json => {
         //"has already been taken"
-        console.log("json handle is: " + json.handle);
-        if (json.handle !== "has already been taken") {
+        if (json.handle[0] !== "has already been taken") {
           this.setState({
             username: json.handle,
             id: json.id
           });
           console.log("if statement thinks username not taken");
+          console.log(this.state)
           const loginCallback = this.props.onLogin;
           loginCallback(json.handle)
           this.createSession();
