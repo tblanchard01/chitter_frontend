@@ -2,7 +2,7 @@ import React from "react";
 import "./peep.css";
 class Peep extends React.Component {
   render() {
-    const { peep } = this.props; //object destructering { peep:{}, login:"" }
+    const { peep } = this.props; 
     const handle = peep.user.handle;
     const msg = peep.body;
 

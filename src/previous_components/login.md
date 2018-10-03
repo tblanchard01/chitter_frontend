@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 
 class Login extends React.Component {
   state = {};
-
+//creates user 
   submitLogin(e) {
     e.preventDefault();
     fetch("https://chitter-backend-api.herokuapp.com/users", {
@@ -25,6 +25,7 @@ class Login extends React.Component {
             username: json.handle,
             id: json.id
           });
+          
           console.log("if statement thinks username not taken");
           console.log(this.state);
           const loginCallback = this.props.onLogin;
@@ -74,7 +75,7 @@ class Login extends React.Component {
 
             <label> password </label>
 
-            <input name="password_input" className="login_input" onChange={e => this.setState({ password: e.target.value })} />
+            <input name="password_input" type = "password" className="login_input" onChange={e => this.setState({ password: e.target.value })} />
             <input type="submit" value="login" />
           </form>
           {this.state.error_flag ? <span>Username already taken!</span> : null}

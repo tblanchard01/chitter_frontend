@@ -11,6 +11,7 @@ class PostPeep extends React.Component {
             user: {
                 handle: this.state.handle,
                 password: "blah blah"
+                //need to put session id here 
             }
         })
     })
@@ -33,7 +34,6 @@ class PostPeep extends React.Component {
         );
 }
 
-  state = {}
   render() {
     if (this.props.username) {
       return (
@@ -57,3 +57,10 @@ export default PostPeep;
 
 
 // {"id":26,"body":"my first peep :)","created_at":"2018-07-29T18:39:32.607Z","updated_at":"2018-07-29T18:39:32.607Z","user":{"id":18,"handle":"tes"},"likes":[]}
+
+
+// curl "https://chitter-backend-api.herokuapp.com/peeps" \
+//   -X POST \
+//   -H "Authorization: Token token=a_valid_session_key" \
+//   -H "Content-Type: application/json" \
+//   -d '{"peep": {"user_id":1, "body":"my first peep :)"}}'
