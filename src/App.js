@@ -1,10 +1,8 @@
-import React, { Component } from "react";
-import "./App.css";
-// import Peep from "./components/peep";
-// import Login from "./components/login";
-// import PostPeep from "./components/PostPeep";
+import React, { Component } from 'react';
+import "./App.css" 
+import "./components/Viewer/Viewer"
 import fetch from "node-fetch";
-
+import Viewer from "./components/Viewer/Viewer";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -30,10 +28,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1> Welcome to Chitter V2.0 </h1>
-
-        <div className="peep_viewer" />
-      </div>
+        <h1> Welcome to Chitter V24848.0 </h1>
+       
+       <Viewer peeps = {this.state.peeps}/>
+        
+          </div>
     );
   }
 }

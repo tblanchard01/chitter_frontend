@@ -1,0 +1,9 @@
+.peep_handle {
+    font-weight: 300; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.peep_msg{
+    font-family: 'Courier New', Courier, monospace; 
+    padding-left: 2%;
+
+}

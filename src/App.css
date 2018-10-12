@@ -50,17 +50,7 @@ h1{
        padding-top: 1%;
        float: left;
    }
-   .peep_viewer{ 
-    background-color:rgba(230, 182, 25, 0.4); 
-    width: 60%;
-    height: 600px;
-    margin-top: 0.5%;
-    margin-right: 5%; 
-    border-radius: 4px;
-    padding: 2%;
-    padding-top: 1%;
-    float: right;
-}
+ 
 
    .peepinput{
     width: 100%;
